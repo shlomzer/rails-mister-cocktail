@@ -1,18 +1,20 @@
-<h2 class="text-center">My cocktail list</h2>
-
-<div class="text-center padded">
-  <%= link_to "Create a cocktail", new_cocktail_path, class: "btn btn-primary" %>
+<div class="banner" style="background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://2k8r3p1401as2e1q7k14dguu-wpengine.netdna-ssl.com/wp-content/uploads/2014/08/8296263650_53b17ea61c_k.jpg');">
+  <div class="banner-content">
+    <h1>My cocktails</h1>
+    <p>Discover the best cocktails.</p>
+    <%= link_to "Create a cocktail", new_cocktail_path, class: "btn btn-primary" %>
+  </div>
 </div>
 
 <div class="container">
   <div class="row">
     <% @cocktails.each do |cocktail| %>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card"
-        style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>')">
-        <%= link_to cocktail.name, cocktail_path(cocktail) %>
-        </div>
-      </div>
-    <% end %>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card"
+      style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path cocktail.photo.path, height: 400, width: 400, crop: :fill %>')">
+      <%= link_to cocktail.name, cocktail_path(cocktail) %>
+    </div>
   </div>
+  <% end %>
+</div>
 </div>
