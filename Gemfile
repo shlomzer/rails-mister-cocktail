@@ -42,7 +42,14 @@ gem 'autoprefixer-rails'
 
 gem 'jquery-rails'
 
+gem 'jquery-fileupload-rails'
+
 gem 'figaro'
+
+gem 'cloudinary', '1.1.7'
+
+gem 'attachinary', github: 'assembler/attachinary'
+
 
 
 group :development, :test do
